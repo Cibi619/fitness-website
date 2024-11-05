@@ -414,6 +414,7 @@ img {
   font-size: var(--small-font-size);
   letter-spacing: .5px;
   line-height: 150%;
+  overflow: auto;
 }
 
 .program__title,
@@ -838,6 +839,9 @@ img {
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 340px) {
+  .nav__logo {
+    font-size: var(--bigger-font-size);
+  }
   .container {
     margin-left: 1rem;
     margin-right: 1rem;
