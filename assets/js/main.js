@@ -102,13 +102,13 @@ const calculateBmi = (e) => {
         if (bmi < 18.5) {
             // Add color and display message
             calculateMessage.classList.add('color-green')
-            calculateMessage.textContent = `Your BMI is ${bmi} and you are skinny 😶`
+            calculateMessage.textContent = `Your BMI is ${bmi}`
         } else if(bmi < 25) {
             calculateMessage.classList.add('color-green')
-            calculateMessage.textContent = `Your BMI is ${bmi} and you are healthy 😊`
+            calculateMessage.textContent = `Your BMI is ${bmi}`
         } else {
             calculateMessage.classList.add('color-green')
-            calculateMessage.textContent = `Your BMI is ${bmi} and you are obese 😯`
+            calculateMessage.textContent = `Your BMI is ${bmi}`
         }
 
         // To clear the input field
@@ -179,3 +179,32 @@ const sendEmail = (e) => {
 }
 
 contactForm.addEventListener('submit', sendEmail);
+
+// Book a call
+const modal = document.getElementById('modal');
+const bookCallBtn = document.getElementById('book_btn')
+const modalClose = document.getElementById('modal-close')
+
+// Show modal when clicking the "Book a Call" button
+bookCallBtn.addEventListener('click', () => {
+    modal.classList.remove('modal__hidden');
+    modal.classList.add('modal-cls');
+});
+
+// Close modal when clicking the close button
+modalClose.addEventListener('click', () => {
+    modal.classList.add('modal__hidden');
+    modal.classList.remove('modal-cls');
+});
+
+// Close modal when clicking outside the modal content
+window.addEventListener('click', (e) => {
+    // console.log(modal.classList,"--classlist");
+    // console.log(e, "--e")
+    if (e.target === modal) {
+        modal.classList.add('modal__hidden');
+    }
+    // else {
+    //     modal.classList.add('modal__hidden');
+    // }
+});

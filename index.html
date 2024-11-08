@@ -26,7 +26,7 @@
                     <li class="nav__item"><a href="#pricing" class="nav__link">Pricing</a></li>
 
                     <div class="nav__link">
-                        <a href="#footer" class="button nav__button">Register Now</a>
+                        <a href="#footer" class="button nav__button">Book A Demo</a>
                     </div>
                 </ul>
 
@@ -45,6 +45,27 @@
     <!--==================== MAIN ====================-->
     <main class="main">
         <!--==================== HOME ====================-->
+        <section class="modal__hidden" id="modal">
+            <div class="modal__content">
+                <span id="modal-close" class="modal__close">&times;</span>
+                <h2 class="heading-text">Book A Demo Now</h2>
+                <form id="book-call-form">
+                    <fieldset>
+                        <legend>Contact Details:</legend>
+                        <label for="fname">First name:</label>
+                        <input type="text" id="fname" name="fname" class="input_field" required>
+                        <label for="lname">Last name:</label>
+                        <input type="text" id="lname" name="lname" class="input_field" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="input_field" required>
+                        <label for="phn_no">Phn_no:</label>
+                        <input type="text" id="phn_no" name="phn" class="input_field">
+                        <input type="submit" class="submit_btn" value="Submit">
+                    </fieldset>
+                </form>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint aliquam molestias ab obcaecati adipisci sed est, error dolorem vero! Ab voluptas possimus, atque delectus mollitia laboriosam consectetur fugiat pariatur amet quia ad minus nam alias voluptate doloribus. Consequuntur repellendus repudiandae tempore cumque, at sunt esse soluta provident, amet possimus atque!</p> -->
+            </div>
+        </section>
         <section class="home section" id="home">
             <div class="home__container container grid">
                 <div class="home__data">
@@ -53,13 +74,13 @@
                     <p class="home__description">In here we will help you to shape and build your ideal 
                         body and live your life to the fullest.
                     </p>
-                    <a href="#" class="button button__flex">
-                        Get Started <i class="ri-arrow-right-line"></i>
+                    <a href="#" class="button button__flex" id="book_btn">
+                        Book A Call <i class="ri-arrow-right-line"></i>
                     </a>
                 </div>
 
                 <div class="home__images">
-                    <img src="assets/img/home-img.png" alt="home image" class="home__img">
+                    <img src="assets/img/workout_image2.png" alt="home image" class="home__img">
 
                     <div class="home__triangle home__triangle-3"></div>
                     <div class="home__triangle home__triangle-2"></div>
@@ -196,7 +217,7 @@ only bad                    workout is the one you didn't do.
                     </div>
 
                     <div class="choose__images">
-                        <img src="assets/img/choose-img.png" alt="choose image" class="choose__img">
+                        <img src="assets/img/workout_image1.png" alt="choose image" class="choose__img">
                         <div class="choose__triangle choose__triangle-1"></div>
                         <div class="choose__triangle choose__triangle-2"></div>
                         <div class="choose__triangle choose__triangle-3"></div>
@@ -353,7 +374,7 @@ only bad                    workout is the one you didn't do.
                     </p>
                 </div>
 
-                <img src="assets/img/calculate-img.png" alt="calculate image" class="calculate__image">
+                <img src="assets/img/workout_image3.png" alt="calculate image" class="calculate__image">
             </div>
         </section>
     </main>
@@ -380,8 +401,8 @@ only bad                    workout is the one you didn't do.
                 <p class="footer__message" id="contact-message"></p>
             </div>
 
-            <div class="footer__content">
-                <div>
+            <div class="footer">
+                <!-- <div>
                     <h3 class="footer__title">
                         Services
                     </h3>
@@ -436,7 +457,11 @@ only bad                    workout is the one you didn't do.
                             <a href="#" class="footer__link">Partners</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
+                <h3 class="footer__contact">Contact</h3><br>
+                <p class="phn__no">+1 437 871 7735</p>
+                <p class="email__id">cibi.mit@gmail.com</p><br>
+                <p class="address__info">220A, Ira Needles Blvd, Kitchener, ON</p>
             </div>
         </div>
 
