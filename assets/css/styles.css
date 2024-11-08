@@ -249,7 +249,7 @@ img {
 .modal__hidden {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
   width: 100%;
@@ -260,7 +260,7 @@ img {
 .modal__content {
   position: absolute;
   z-index: 1000;
-  background-color: #fff;
+  background-color: #18033a;
   margin: 8% auto;
   padding: 20px;
   width: 90%;
@@ -288,6 +288,7 @@ fieldset {
   font-size: var(--normal-font-size);
   margin-top: 1vh;
   border: 1px solid var(--first-color);
+  margin-bottom: 1vh;
 }
 
 legend {
@@ -302,7 +303,7 @@ legend {
   margin-right: auto;
 }
 
-input[type="text"],
+/* input[type="text"],
 input[type="email"],
 input[type="number"],
 input[type="password"],
@@ -326,9 +327,24 @@ input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="password"]:focus,
 textarea:focus {
-    border-color: var(--first-color-dark); /* Change to match your theme */
+    border-color: var(--first-color-dark); 
     box-shadow: 0 0 5px #f1ab60(0, 123, 255, 0.5);
     background-color: #fff;
+} */
+
+.input_field {
+  width: 80%;
+    padding: 5px 8px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--first-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: transparent;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
 }
 
 label {
@@ -341,6 +357,8 @@ label {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 1vh;
+    margin-bottom: 3vh;
     padding: 12px 20px;
     border: none;
     border-radius: 8px;
@@ -348,12 +366,34 @@ label {
     color: #fff;
     font-size: 16px;
     font-weight: 600;
-    cursor: pointer;
+    cursor: not-allowed;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     display: inline-block;
     text-decoration: none;
     outline: none;
+}
+
+.btn-enabled {
+  background-color: var(--first-color-dark);
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 101;
+}
+
+.hidden {
+  display: none;
 }
 
 /* 

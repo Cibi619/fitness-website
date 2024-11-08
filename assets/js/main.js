@@ -182,6 +182,7 @@ contactForm.addEventListener('submit', sendEmail);
 
 // Book a call
 const modal = document.getElementById('modal');
+const overlay = document.getElementById('overlay');
 const bookCallBtn = document.getElementById('book_btn')
 const modalClose = document.getElementById('modal-close')
 
@@ -189,12 +190,14 @@ const modalClose = document.getElementById('modal-close')
 bookCallBtn.addEventListener('click', () => {
     modal.classList.remove('modal__hidden');
     modal.classList.add('modal-cls');
+    overlay.classList.remove('hidden');
 });
 
 // Close modal when clicking the close button
 modalClose.addEventListener('click', () => {
     modal.classList.add('modal__hidden');
     modal.classList.remove('modal-cls');
+    overlay.classList.add('hidden');
 });
 
 // Close modal when clicking outside the modal content
@@ -204,7 +207,29 @@ window.addEventListener('click', (e) => {
     if (e.target === modal) {
         modal.classList.add('modal__hidden');
     }
-    // else {
-    //     modal.classList.add('modal__hidden');
-    // }
 });
+
+// modal form
+window.addEventListener('input', (e) => {
+    console.log(e);
+     // check if all required fields are entered
+     const firstName = document.getElementById('fname').value;
+     const lastName = document.getElementById('lname').value;
+     const emailId = document.getElementById('email').value;
+     const phnNo = document.getElementById('phn_no').value;
+     const submitBtn = document.getElementById('submit-btn');
+ 
+     console.log(firstName, "---fname")
+     console.log(lastName, "---lname")
+     console.log(emailId, "---email")
+     console.log(phnNo, "---phn")
+     if (firstName && lastName && emailId && phnNo) {
+        console.log('Enable--')
+        submitBtn.classList.add('btn-enabled')
+        submitBtn.disabled = false;
+     }
+     else {
+        submitBtn.classList.remove('btn-enabled')
+        submitBtn.disabled = true;
+     }
+})
