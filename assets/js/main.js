@@ -184,10 +184,18 @@ contactForm.addEventListener('submit', sendEmail);
 const modal = document.getElementById('modal');
 const overlay = document.getElementById('overlay');
 const bookCallBtn = document.getElementById('book_btn')
+const bookDemoBtn = document.getElementById('book_demo_btn');
 const modalClose = document.getElementById('modal-close')
 
 // Show modal when clicking the "Book a Call" button
 bookCallBtn.addEventListener('click', () => {
+    modal.classList.remove('modal__hidden');
+    modal.classList.add('modal-cls');
+    overlay.classList.remove('hidden');
+});
+
+// show modal when clicking the "Book Demo" button
+bookDemoBtn.addEventListener('click', () => {
     modal.classList.remove('modal__hidden');
     modal.classList.add('modal-cls');
     overlay.classList.remove('hidden');
