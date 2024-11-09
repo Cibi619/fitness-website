@@ -200,6 +200,10 @@ img {
   cursor: pointer;
 }
 
+.disable-scroll {
+  overflow: hidden;
+}
+
 @media screen and (max-width: 1023px) {
   .nav__menu {
     position: fixed;

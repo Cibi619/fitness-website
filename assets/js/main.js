@@ -1,4 +1,5 @@
 /*=============== SHOW MENU ===============*/
+let containerEl = document.getElementById('container');
 let navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose = document.getElementById('nav-close');
@@ -192,6 +193,7 @@ bookCallBtn.addEventListener('click', () => {
     modal.classList.remove('modal__hidden');
     modal.classList.add('modal-cls');
     overlay.classList.remove('hidden');
+    document.body.classList.add('disable-scroll');
 });
 
 // show modal when clicking the "Book Demo" button
@@ -199,6 +201,7 @@ bookDemoBtn.addEventListener('click', () => {
     modal.classList.remove('modal__hidden');
     modal.classList.add('modal-cls');
     overlay.classList.remove('hidden');
+    document.body.classList.add('disable-scroll');
 });
 
 
@@ -279,4 +282,5 @@ modalClose.addEventListener('click', () => {
     modal.classList.add('modal__hidden');
     modal.classList.remove('modal-cls');
     overlay.classList.add('hidden');
+    document.body.classList.remove('disable-scroll');
 });
