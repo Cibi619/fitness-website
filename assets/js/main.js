@@ -193,12 +193,6 @@ bookCallBtn.addEventListener('click', () => {
     overlay.classList.remove('hidden');
 });
 
-// Close modal when clicking the close button
-modalClose.addEventListener('click', () => {
-    modal.classList.add('modal__hidden');
-    modal.classList.remove('modal-cls');
-    overlay.classList.add('hidden');
-});
 
 // Close modal when clicking outside the modal content
 window.addEventListener('click', (e) => {
@@ -227,9 +221,54 @@ window.addEventListener('input', (e) => {
         console.log('Enable--')
         submitBtn.classList.add('btn-enabled')
         submitBtn.disabled = false;
+
      }
      else {
         submitBtn.classList.remove('btn-enabled')
         submitBtn.disabled = true;
      }
 })
+const formSubmitEl = document.getElementById('book-call-form');
+let firstName = document.getElementById('fname');
+let lastName = document.getElementById('lname');
+let emailId = document.getElementById('email');
+let phnNo = document.getElementById('phn_no');
+const submitBtn = document.getElementById('submit-btn');
+const bookMail = (e) => {
+    e.preventDefault();
+    console.log('---erfiuer')
+    const templateParams = {
+        first_name: document.getElementById('fname').value,
+        last_name: document.getElementById('lname').value,
+        email: document.getElementById('email').value,
+        phn: document.getElementById('phn_no').value
+    };
+    emailjs.send('service_u1z4q8m','template_6ejgawu', templateParams, 'QFVUxq72OtbovNc6S')
+    .then((response) => {
+        console.log(response,"--response");
+        firstName = ''
+        lastName = ''
+        emailId = ''
+        phnNo = ''
+    
+        modal.classList.add('modal__hidden');
+        modal.classList.remove('modal-cls');
+        overlay.classList.add('hidden');
+    }, (error) => {
+        console.log(error, "--error");
+    })
+}
+
+formSubmitEl.addEventListener('submit', bookMail);
+
+// Close modal when clicking the close button
+modalClose.addEventListener('click', () => {
+    console.log(firstName,"--firstname")
+    firstName.value = ''
+    lastName.value = ''
+    emailId.value = ''
+    phnNo.value = ''
+    modal.classList.add('modal__hidden');
+    modal.classList.remove('modal-cls');
+    overlay.classList.add('hidden');
+});
